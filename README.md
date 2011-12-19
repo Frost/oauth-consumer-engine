@@ -28,11 +28,16 @@ Simply add this to your gemfile:
 The `User` model is at the moment dependent on that you have a local users table, containing `uid`, `first_name`, `last_name` and `status` (and timestamps).
 I plan on making the user model use ReactiveResource or something similar instead, to make it even more flexible.
 
-Then you need to set a few environment variables in order for it to work properly:
+Then just run
 
-* `CUSTOM_PROVIDER_URL` -- Where your oauth provider lives (e.g. https://my.custom.oauth.provider.com)
-* `APP_ID` -- Your registered app id.
-* `APP_SECRET` -- Your registered app secret.
+    bundle install
+    bundle exec rake oauth_consumer_engine:install
+
+Then you need to edit the `config/initializers/oauth_consumer_engine.rb` and set a few variables
+
+* `custom_provider_url` -- Where your oauth provider lives (e.g. https://my.custom.oauth.provider.com)
+* `app_id` -- Your registered app id.
+* `app_secret` -- Your registered app secret.
 
 That's it.
 
@@ -44,3 +49,4 @@ The gem/engine fanciness (generators/rake tasks/templates) are inspired by (amon
 
 * plataformatec/devise
 * sferik/rails_admin
+
