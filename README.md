@@ -23,7 +23,7 @@ This rails is only tested with ruby 1.9.2, rails 3.1 and omniauth 1.0.0.
 
 Simply add this to your gemfile:
 
-    gem 'auth-consumer-engine', git: "https://github.com/Frost/oauth-consumer-engine.git"
+    gem 'oauth-consumer-engine', git: "https://github.com/Frost/oauth-consumer-engine.git"
 
 The `User` model is at the moment dependent on that you have a local users table, containing `uid`, `first_name`, `last_name` and `status` (and timestamps).
 I plan on making the user model use ReactiveResource or something similar instead, to make it even more flexible.
