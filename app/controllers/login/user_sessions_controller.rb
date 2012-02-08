@@ -11,7 +11,9 @@ class Login::UserSessionsController < ApplicationController
       # New user registration
       user = User.create!(:uid => omniauth['uid'],
                           :first_name => omniauth['info']['first_name'],
-                          :last_name => omniauth['info']['last_name'])
+                          :last_name => omniauth['info']['last_name'],
+                          :email => omniauth['info']['email']
+                         )
     end
 
     # Currently storing all the info
