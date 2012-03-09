@@ -20,7 +20,7 @@ class Login::UserSessionsController < ApplicationController
     session[:user_id] = omniauth
 
     flash[:notice] = "Successfully logged in"
-    redirect_to request.env['omniauth.origin']
+    redirect_to request.env['omniauth.origin'] || root_path
   end
 
   # Omniauth failure callback
