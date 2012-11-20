@@ -17,7 +17,8 @@ module OmniAuth
       # Adds a extra parameter called initial_page sent to the OAuth provider, this is specific for the studentcompetition login provider
       def request_phase
         # For allowed values for the initial_page param, check the SC-API (The CustomFailure class)
-        initial_page = @request.params[:initial_page] || "sign_in"
+        # Note that you have to access the @request.params hash with a string, otherwise it does not get any value.
+        initial_page = @request.params["initial_page"] || "sign_in"
         redirect client.auth_code.authorize_url({:redirect_uri => callback_url, :initial_page => initial_page}.merge(authorize_params))
       end
 
