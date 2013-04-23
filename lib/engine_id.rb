@@ -19,7 +19,8 @@ module OmniAuth
         # For allowed values for the initial_page param, check the SC-API (The CustomFailure class)
         # Note that you have to access the @request.params hash with a string, otherwise it does not get any value.
         initial_page = @request.params["initial_page"] || "sign_in"
-        redirect client.auth_code.authorize_url({:redirect_uri => encode_uri_if_necessary(callback_url), :initial_page => initial_page}.merge(authorize_params))
+        origin_site_url =  @request.params["origin_site_url"]
+        redirect client.auth_code.authorize_url({:redirect_uri => encode_uri_if_necessary(callback_url), :initial_page => initial_page, :origin_site_url => origin_site_url}.merge(authorize_params))
       end
 
       def raw_info
