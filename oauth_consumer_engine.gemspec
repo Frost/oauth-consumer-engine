@@ -18,11 +18,7 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_dependency 'rails'
-  s.add_dependency "omniauth"
-  s.add_dependency "omniauth-oauth2"
+  s.add_dependency "omniauth", [">= 1.2.1"]
+  s.add_dependency "omniauth-oauth2", [">= 1.1.2"]
   s.add_dependency "multi_json"
-
-  s.add_runtime_dependency 'omniauth'
-  s.add_runtime_dependency 'omniauth-oauth2'
-  s.add_runtime_dependency 'multi_json'
 end
